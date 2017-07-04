@@ -1,0 +1,57 @@
+<div>
+  {{addForm.value | json}}
+    <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+    <div formGroupName="userData">
+        <div>
+          <label for="name">Name</label>
+          <input 
+            type="text"
+            name="name"
+            formControlName="name"
+            >
+
+        <span *ngIf="!addForm.get('userData.name').valid && addForm.get('userData.name').touched">Enter name</span>
+        </div>
+        <div>
+          <label for="amount">Amount</label>
+          <input 
+            type="number"
+            name="amount"
+            formControlName="amount"
+            >
+        </div>
+    </div>
+    
+
+    <div>
+      <label for="country">Country</label>
+      <select name="country">
+        <option value="IN">India</option>
+        <option value="US">USA</option>
+      </select>
+    </div>
+
+    <div formArrayName="hobbies">
+        <h4>Your hobbies</h4>
+        <button
+          type="button"
+          (click)="onAddHobby()"
+        >
+          Add Hobby
+        </button>
+
+        <div *ngFor="let hobbyControl of addForm.get('hobbies').controls; let i = index">
+          <input type="text" [formControlName]="i">
+
+        </div>
+
+
+    </div>
+
+    <button type="submit">Submit</button>
+    <button (click)="assignValue()">Assign Dynamic</button>
+
+  </form>
+
+
+</div>

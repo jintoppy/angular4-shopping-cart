@@ -1,0 +1,21 @@
+<div>
+  demo works!
+  <button (click)="setView('SimpleForm')">Simple-Form</button>
+  <button (click)="setView('ReactiveForm')">Reactive-Form</button>
+  <button (click)="setView('Directive')">Directive</button>
+  <button (click)="setView('Lifecycle')">Lifecycle</button>
+  <button (click)="setView('Pipe')">Pipe</button>
+  <button (click)="setView('Service')">Service</button>
+  <button (click)="setView('Routing')">Routing</button>
+  <button (click)="setView('Component')">Component</button>
+  <div [ngSwitch]="activeView">    
+    <app-component *ngSwitchDefault></app-component>
+    <app-directive *ngSwitchCase="'Directive'"></app-directive>
+    <app-lifecycle *ngSwitchCase="'Lifecycle'"></app-lifecycle>
+    <app-pipe *ngSwitchCase="'Pipe'"></app-pipe>
+    <app-reactive-form *ngSwitchCase="'ReactiveForm'"></app-reactive-form>
+    <app-service *ngSwitchCase="'Service'"></app-service>
+    <app-simple-form *ngSwitchCase="'SimpleForm'"></app-simple-form>    
+  </div>
+  
+</div>

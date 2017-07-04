@@ -1,0 +1,7 @@
+<p>
+  parent works!
+  <app-child [title]="'Hello'" (onInsideClick)="clicked($event)"></app-child>
+
+  <input type="text" #myname>
+  <button (click)="getInputVal(myname)">Click to display value</button>
+</p>

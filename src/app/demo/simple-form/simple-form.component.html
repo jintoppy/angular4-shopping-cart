@@ -1,0 +1,55 @@
+<div>
+  {{f.value | json}}
+  <form #f="ngForm" (ngSubmit)="onAdd(f)">
+    <div 
+    ngModelGroup="basicData"
+    #basicData="ngModelGroup">
+        <div>
+          <label for="name">Name</label>
+          <input 
+            type="text"
+            name="name"
+            ngModel
+            required
+            >
+        </div>
+        <div>
+          <label for="amount">Amount</label>
+          <input 
+            type="number"
+            name="amount"
+            ngModel
+            #amount
+            required
+            >
+          </div>
+          {{amount | json}}
+    </div>
+    
+
+    <div>
+      <label for="country">Country</label>
+      <select name="country" [ngModel]="'US'">
+        <option>Select</option>
+        <option value="IN">India</option>
+        <option value="US">USA</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="answer">Give Answer</label>
+      <textarea 
+        name="answer"
+        rows="3"
+        [(ngModel)]="answer"
+        ></textarea>
+        {{answer}}
+    </div>
+
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+    <button (click)="assignValue()">Assign Dynamic</button>
+
+  </form>
+
+
+</div>
