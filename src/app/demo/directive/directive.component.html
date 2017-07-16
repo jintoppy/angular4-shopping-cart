@@ -1,4 +1,7 @@
 <p>
   directive works!
   <span appHighlight>Hi</span>
+
+  <span appHighlight #el="appHighlight">Hello</span>
+  <button (click)="el.displayMessage()">Click me</button>
 </p>

@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class SimpleFormComponent implements OnInit {
   @ViewChild('f') addForm: NgForm;
   answer: string = '';
+  model = {};
   constructor() { }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class SimpleFormComponent implements OnInit {
     //   },
     //   country: 'IN'
     // });
+    
   
     this.addForm.form.patchValue({
       basicData: {

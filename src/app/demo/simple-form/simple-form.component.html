@@ -19,11 +19,11 @@
             type="number"
             name="amount"
             ngModel
-            #amount
             required
+            #amount="ngModel"
             >
           </div>
-          {{amount | json}}
+          {{amount.value}}
     </div>
     
 

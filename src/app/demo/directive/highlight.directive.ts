@@ -1,7 +1,8 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnInit, HostListener } from '@angular/core';
 
 @Directive({
-    selector: '[appHighlight]'
+    selector: '[appHighlight]',
+    exportAs: 'appHighlight'
 })
 export class HighlightDirective implements OnInit{
     constructor(private el: ElementRef){
@@ -11,4 +12,10 @@ export class HighlightDirective implements OnInit{
     ngOnInit(){
         this.el.nativeElement.style.backgroundColor = 'blue';
     }
+
+    @HostListener('click')
+    displayMessage(){
+        alert('clicked');
+    }
+
 }

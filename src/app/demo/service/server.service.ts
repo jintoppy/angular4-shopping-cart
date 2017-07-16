@@ -11,7 +11,7 @@ export class ServerService{
         const headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.get('some url', {headers})
+        return this.http.get('http://5955445c2374e400111e47e7.mockapi.io/api/users', {headers})
                 .map((response: Response) => {
                     const data = response.json();
                     return data; 

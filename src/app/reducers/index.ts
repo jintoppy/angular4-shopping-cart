@@ -1,6 +1,11 @@
 import { combineReducers } from '@ngrx/store';
 import {products} from './product.reducer';
 import Product from '../shared/product.model';
-export const reducer = combineReducers({
+
+const reducers = combineReducers({
     products
 })
+
+export const reducer = function(state, action){
+    return reducers(state, action);
+}

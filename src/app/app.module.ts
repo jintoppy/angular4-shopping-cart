@@ -1,5 +1,6 @@
 import { HighlightDirective } from './demo/directive/highlight.directive';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -26,6 +27,7 @@ import { ParentComponent } from './demo/component/parent/parent.component';
 import { ShortenPipe } from './demo/pipe/shorten.pipe';
 import { ChildComponent } from './demo/component/child/child.component';
 import { DemoServiceService } from './demo/demo-service.service';
+import { ServerService } from './demo/service/server.service';
 import { ObservableComponent } from './demo/observable/observable.component';
 import { RoutingComponent } from './routing/routing.component';
 import { PopupComponent } from './popup/popup.component';
@@ -34,6 +36,7 @@ import {MyErrorHandler} from './myerrorhandler';
 
 
 import {reducer} from './reducers';
+import { AnimationComponent } from './demo/animation/animation.component';
 
 
 @NgModule({
@@ -58,9 +61,11 @@ import {reducer} from './reducers';
     ObservableComponent,
     RoutingComponent,
     PopupComponent,
+    AnimationComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     AdminModule,
@@ -71,6 +76,7 @@ import {reducer} from './reducers';
   ],
   providers: [
       DemoServiceService,
+      ServerService,
       {provide: ErrorHandler, useClass: MyErrorHandler}
     ],
   bootstrap: [AppComponent]
