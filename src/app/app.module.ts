@@ -37,6 +37,7 @@ import {MyErrorHandler} from './myerrorhandler';
 
 import {reducer} from './reducers';
 import { AnimationComponent } from './demo/animation/animation.component';
+import { TestComponent } from './demo/test/test.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { AnimationComponent } from './demo/animation/animation.component';
     RoutingComponent,
     PopupComponent,
     AnimationComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
