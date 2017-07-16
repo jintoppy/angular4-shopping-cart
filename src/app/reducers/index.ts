@@ -6,6 +6,6 @@ const reducers = combineReducers({
     products
 })
 
-export const reducer = function(state, action){
+export function reducer(state, action){
     return reducers(state, action);
 }
